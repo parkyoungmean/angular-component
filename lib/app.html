@@ -1,0 +1,18 @@
+<div class="app">
+  <div class="app__l-side">
+    <ngc-navigation [active-link]="getSelectedProjectLink()"
+                    [open-tasks-count]="getOpenTasksCount()"
+                    (active-link-change)="selectProjectByLink($event)">
+      <ngc-navigation-section title="Projects"
+                              [items]="getProjectNavigationItems()">
+      </ngc-navigation-section>
+    </ngc-navigation>
+  </div>
+  <div class="app__l-main">
+    <ngc-project *ng-if="getSelectedProject()"
+                 [title]="getSelectedProject().title"
+                 [description]="getSelectedProject().description"
+                 [tasks]="getSelectedProject().tasks"
+                 (project-updated)="updateSelectedProject($event)"></ngc-project>
+  </div>
+</div>

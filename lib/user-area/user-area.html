@@ -1,0 +1,8 @@
+<div class="user-area__l-profile">
+  <img src="/images/user.svg" alt="User profile image">
+</div>
+<div class="user-area__l-information">
+  <p class="user-area__welcome-text">Hi there!</p>
+  <p *ng-if="openTasksCount !== 0">You got <strong>{{openTasksCount}}</strong> open tasks.</p>
+  <p *ng-if="openTasksCount === 0">No open tasks. Hooray!</p>
+</div>
